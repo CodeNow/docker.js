@@ -1,0 +1,45 @@
+{
+  "name": "docker.js",
+  "version": "0.0.2",
+  "description": "wrapper for low-level docker.io http interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -R tap tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FrozenRidge/docker.js.git"
+  },
+  "keywords": [
+    "docker",
+    "docker.io",
+    "lxc",
+    "container"
+  ],
+  "author": {
+    "name": "Niall O'Higgins"
+  },
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "07221a32f24cfee9232e1b00b7dbe44436f205ec",
+  "dependencies": {
+    "async": "~0.2.8",
+    "request": "~2.21.0"
+  },
+  "devDependencies": {
+    "chai": "~1.6.0",
+    "mocha": "~1.9.0",
+    "nock": "~0.18.0"
+  },
+  "readme": "*[Note: The Docker Remote API is super new, and all of this is likely to change. Consider this semi-functional vaporware for now.]*\n\ndocker.js\n=========\n\nNode.JS wrapper for low-level Docker.io HTTP interface\n\nRemote API: http://docs.docker.io/en/latest/api/docker_remote_api.html\n\nIndex Search API: http://docs.docker.io/en/latest/api/index_search_api.html\n\nRegistry API: http://docs.docker.io/en/latest/api/registry_api.html\n\n\n## Usage\n\n```javascript\n\nvar docker = require('docker.js')({host:\"http://localhost:4243\"})\n\ndocker.listContainers(function gotContainers (err, containers) {\n  if (err) throw err\n  console.log(\"Containers: \", containers)\n})\n\nstream.pipe(docker.attachToContainer(opts)).pipe(stream)\n\ndocker.listContainers(opts, cb)\ndocker.createContainer(opts, cb);\ndocker.inspectContainer(opts, cb);\n// Untested yet:\ndocker.inspectContainerChanges(opts, cb);\ndocker.exportContainer(opts, cb);\ndocker.startContainer(opts, cb);\ndocker.stopContainer(opts, cb);\ndocker.restartContainer(opts, cb);\ndocker.killContainer(opts, cb);\ndocker.attachToContainer(opts, cb);\ndocker.waitContainer(opts, cb);\ndocker.removeContainer(opts, cb);\n\ndocker.listImages(opts, cb);\ndocker.createImage(opts, cb);\ndocker.insertFileImage(opts, cb);\ndocker.inspectImage(opts, cb);\ndocker.historyImage(opts, cb);\ndocker.pushImage(opts, cb);\ndocker.tagImage(opts, cb);\ndocker.removeImage(opts, cb);\ndocker.searchImages(opts, cb);\n\ndocker.build(opts, cb);\ndocker.auth(opts, cb);\ndocker.systemInfo(opts, cb);\ndocker.commit(opts, cb);\n\ndocker.version(cb)\n\n\n\n```\n\n",
+  "bugs": {
+    "url": "https://github.com/FrozenRidge/docker.js/issues"
+  },
+  "homepage": "https://github.com/FrozenRidge/docker.js",
+  "_id": "docker.js@0.0.2",
+  "dist": {
+    "shasum": "a7fb99631c3639ab6667c8f7c011fcc95fafb0c6"
+  },
+  "_resolved": "git://github.com/CodeNow/docker.js.git#063528dafcd56e8aff0f825db9df1f4c82104905",
+  "_from": "docker.js@git://github.com/CodeNow/docker.js.git"
+}
